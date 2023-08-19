@@ -6,17 +6,15 @@
       <a class="navbar-brand" href="#">My Vue</a>
       <div class="container-fluid" id="navbarNav">
         <ul class="navbar-nav">
-          <li
+          <navbar-link
             v-for="(page, index) in publishedPages"
             class="nav-item active"
             :key="index"
-          >
-            <navbar-link
-              :page="page"
-              :isActive="active === index"
-              @click.prevent="navLinkClick(index)"
-            ></navbar-link>
-          </li>
+            :page="page"
+            :index="index"
+            :isActive="active === index"
+            @actived="$emit('actived')"
+          ></navbar-link>
         </ul>
       </div>
     </div>
@@ -42,7 +40,7 @@
         return this.pages.filter((p) => p.published)
       },
     },
-    props: ["pages", "activePage", "navLinkClick"],
+    props: ["pages", "activePage"],
     data() {
       return {
         theme: "dark",
