@@ -5,16 +5,10 @@
             <div class="container-fluid" id="navbarNav">
             <ul class="navbar-nav">
                 <li v-for="(page, index) in pages" class="nav-item active" :key="index">
-                    <a
-                        class="nav-link" 
-                        :class="{active: activePage == index}"
-                        aria-current="page"
-                        :href="page.link.url"
-                        :title="`This link goes to the ${page.link.text} page`"
-                        @click.prevent="navLinkClick(index)"
-                    >
-                        {{  page.link.text }}
-                    </a>
+                   <navbar-link 
+                        :page="page" 
+                        :isActive="active === index"         
+                        @click.prevent="navLinkClick(index)"></navbar-link>
                 </li>
             </ul>
             </div>
@@ -26,7 +20,11 @@
 </template>
 
 <script>
+    import NavbarLink from './NavbarLink.vue';
     export default {
+        components: {
+            NavbarLink
+        },
         props: ['pages', 'activePage', 'navLinkClick'],
         data() {
             return {
