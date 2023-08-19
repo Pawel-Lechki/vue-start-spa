@@ -8,7 +8,7 @@
         v-if="pages.length > 0"
         :page="pages[activePage]">
     </PageViewer> -->
-  <create-page :page-created="pageCreated"> </create-page>
+  <create-page @page-created="pageCreated"></create-page>
 </template>
 
 <script>
