@@ -91,12 +91,18 @@
           },
           published: this.published,
         })
-
         ;(this.pageTitle = ""),
           (this.content = ""),
           (this.linkText = ""),
           (this.linkUrl = ""),
           (this.published = false)
+      },
+    },
+    watch: {
+      pageTitle(newTitle, oldTitle) {
+        if (this.linkText === oldTitle) {
+          this.linkText = newTitle
+        }
       },
     },
   }
