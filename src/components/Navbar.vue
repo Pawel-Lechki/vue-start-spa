@@ -8,7 +8,7 @@
         <ul class="navbar-nav">
           <navbar-link
             v-for="(page, index) in publishedPages"
-            class="nav-item active"
+            class="nav-item"
             :key="index"
             :page="page"
             :index="index"
