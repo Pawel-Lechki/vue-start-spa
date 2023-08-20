@@ -15,12 +15,12 @@
           ></navbar-link>
           <li>
             <router-link
-              to="/pages/create"
+              to="/pages"
               class="nav-link"
               aria-current="page"
               active-class="active"
             >
-              Create Page
+              Pages
             </router-link>
           </li>
         </ul>
@@ -37,6 +37,7 @@
 <script>
   import NavbarLink from "./NavbarLink.vue"
   export default {
+    inject: ["$pages"],
     components: {
       NavbarLink,
     },

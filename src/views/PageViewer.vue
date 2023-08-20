@@ -9,6 +9,7 @@
 <script>
   export default {
     props: ["index"],
+    inject: ["$pages"],
     created() {
       //   console.log(this.$route.params)
       //   this.page = this.$pages.getSinglePage(this.$route.params.index)
