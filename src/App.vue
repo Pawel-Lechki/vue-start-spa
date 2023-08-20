@@ -1,13 +1,13 @@
 <template>
   <Navbar :pages="pages" :active-page="activePage"></Navbar>
-  <PageViewer v-if="pages.length > 0" :page="pages[activePage]"> </PageViewer>
-  <create-page @page-created="pageCreated"></create-page>
+  <!-- <PageViewer v-if="pages.length > 0" :page="pages[activePage]"> </PageViewer>
+  <create-page @page-created="pageCreated"></create-page> -->
+  <router-view></router-view>
 </template>
 
 <script>
   import PageViewer from "./components/PageViewer.vue"
   import Navbar from "./components/Navbar.vue"
-  import { resolveTransitionHooks } from "vue"
   import CreatePage from "./components/CreatePage.vue"
 
   export default {

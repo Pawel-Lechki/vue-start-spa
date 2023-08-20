@@ -1,22 +1,22 @@
 <template>
-    <div class="container">
-        <h1 class="emphesize">{{ page.pageTitle }}</h1>
-        <p>{{ page.content }}</p>
-    </div>
+  <div class="container">
+    <h1 class="emphesize">Page Title</h1>
+    <p>Page Content</p>
+  </div>
 </template>
 
 <script>
-    export default {
-        props: {
-            page: {
-                type: Object,
-                default(rawProps) {
-                    return {
-                        pageTitle: '',
-                        content: '',
-                    }
-                }
-            }
+  export default {
+    props: {
+      page: {
+        type: Object,
+        default(rawProps) {
+          return {
+            pageTitle: "",
+            content: "",
+          }
         },
-    }
+      },
+    },
+  }
 </script>
