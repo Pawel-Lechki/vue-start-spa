@@ -12,11 +12,14 @@
             :key="index"
             :page="page"
             :index="index"
-            :isActive="active === index"
-            @actived="$emit('actived')"
           ></navbar-link>
           <li>
-            <router-link to="/create" class="nav-link" aria-current="page">
+            <router-link
+              to="/create"
+              class="nav-link"
+              aria-current="page"
+              active-class="active"
+            >
               Create Page
             </router-link>
           </li>
@@ -39,16 +42,19 @@
     },
     created() {
       this.getThemeSetting()
+
+      this.pages = this.$pages.getAllPages()
     },
     computed: {
       publishedPages() {
         return this.pages.filter((p) => p.published)
       },
     },
-    props: ["pages", "activePage"],
+
     data() {
       return {
         theme: "dark",
+        data: [],
       }
     },
     methods: {

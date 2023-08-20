@@ -1,5 +1,5 @@
 <template>
-  <div v-if="page" class="container">
+  <div v-if="page" class="container mt-2">
     <h1 class="emphesize">{{ page.pageTitle }}</h1>
     <p>{{ page.content }}t</p>
     <p>{{ $route.params.index }}</p>
