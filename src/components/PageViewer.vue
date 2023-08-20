@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <h1 class="emphesize">Page Title</h1>
-    <p>Page Content</p>
+  <div v-if="page" class="container">
+    <h1 class="emphesize">{{ page.pageTitle }}</h1>
+    <p>{{ page.content }}t</p>
     <p>{{ $route.params.index }}</p>
   </div>
 </template>
@@ -10,6 +10,12 @@
   export default {
     created() {
       //   console.log(this.$route.params)
+      this.page = this.$pages.getSinglePage(this.$route.params.index)
+    },
+    data() {
+      return {
+        page: null,
+      }
     },
   }
 </script>
